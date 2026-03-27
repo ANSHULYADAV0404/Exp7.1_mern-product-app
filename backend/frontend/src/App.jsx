@@ -344,21 +344,6 @@ const App = () => {
           ) : null}
         </Modal.Body>
       </Modal>
-      <footer className="site-footer">
-        <Container className="py-4">
-          <div className="footer-card">
-            <p className="footer-title mb-1">Created by ADITYA CHHIKARA</p>
-            <a
-              className="footer-link"
-              href="https://www.linkedin.com/in/aditya-chhikara-9a7453306"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.linkedin.com/in/aditya-chhikara-9a7453306
-            </a>
-          </div>
-        </Container>
-      </footer>
     </div>
   );
 };
