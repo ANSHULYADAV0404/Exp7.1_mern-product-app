@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api",
-  timeout: 10000
+  // Yahan apna Render wala Backend URL dalo (Bina kisi variable ke)
+  baseURL: "https://exp7-1-mern-product-app.onrender.com/api", 
+  timeout: 15000 // Thoda extra time dete hain cloud server ko respond karne ke liye
 });
 
 export const fetchProducts = async () => {
