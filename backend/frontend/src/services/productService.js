@@ -1,9 +1,13 @@
 import axios from "axios";
 
+const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
+const baseURL = configuredBaseUrl
+  ? configuredBaseUrl.replace(/\/+$/, "")
+  : "https://exp7-1-mern-product-app.onrender.com/api";
+
 const api = axios.create({
-  // Yahan apna Render wala Backend URL dalo (Bina kisi variable ke)
-  baseURL: "https://exp7-1-mern-product-app.onrender.com/api", 
-  timeout: 15000 // Thoda extra time dete hain cloud server ko respond karne ke liye
+  baseURL,
+  timeout: 15000
 });
 
 export const fetchProducts = async () => {

@@ -53,6 +53,12 @@ npm install
 
 Set `MONGO_URI` in `backend/.env`.
 
+For CORS, set either `CLIENT_URL` to one frontend origin or `CLIENT_URLS` to a comma-separated list such as:
+
+```bash
+CLIENT_URLS=http://localhost:5173,https://your-app.vercel.app
+```
+
 If you want to seed MongoDB after adding the URI:
 
 ```bash
@@ -77,3 +83,5 @@ npm run dev
 ```
 
 Frontend runs on `http://localhost:5173` and expects the backend on `http://localhost:5000`.
+
+For production frontend deployments, set `VITE_API_BASE_URL` to your deployed backend API base, for example `https://your-backend.onrender.com/api`.
