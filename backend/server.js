@@ -15,6 +15,11 @@ const allowedOrigins = (process.env.CLIENT_URLS || process.env.CLIENT_URL || "ht
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+const defaultAllowedOriginPatterns = [
+  /^http:\/\/localhost:\d+$/,
+  /^https:\/\/.*\.vercel\.app$/
+];
+
 app.use(
   cors({
     origin(origin, callback) {
@@ -23,6 +28,10 @@ app.use(
       }
 
       if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      if (defaultAllowedOriginPatterns.some((pattern) => pattern.test(origin))) {
         return callback(null, true);
       }
 
